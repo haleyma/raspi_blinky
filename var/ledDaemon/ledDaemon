@@ -1,0 +1,40 @@
+#! /bin/bash
+#############################################################
+# Script to control ledDaemon, roughly after SysVinit
+# Copyright (c) Charles Shapiro Feb 2018
+#
+# This file is part of raspi_blinky.
+#   raspi_blinky is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#   raspi_blinky is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#   You should have received a copy of the GNU General Public License
+#   along with raspi_blinky.  If not, see <http://www.gnu.org/licenses/>.
+#############################################################
+
+# set -x
+
+LEDAEMONDIR="/var/ledDaemon"
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LEDAEMONDIR}
+DAEMON=ledDaemon.py
+DAEMONLOG=/var/ledDaemon/ledDaemon.log
+test -x ${LEDAEMONDIR}/${DAEMON} || exit 0
+
+set -e
+cd ${LEDAEMONDIR}
+
+case "$1" in
+     start)
+	(sudo /bin/bash -c "./${DAEMON} > ${DAEMONLOG} 2>&1") &
+	;;
+     stop)
+        sudo /bin/bash -c "./ledDaemonController.py "QUIT" >> ${DAEMONLOG} 2>&1" 
+	;;
+     status)
+	ps aux -www | grep ${DAEMON}
+esac
+

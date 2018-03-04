@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Static LED Control</title>
+</head>
+<body>
+<h1>Static LED Control Page</h1>
+
+<!-- form action="../cgi-bin/show_vars.sh" method="post" -->
+<form action="../cgi-bin/ledControllerCGI.py">
+  <input type="radio" value="ON" name="radio_onoff">Turn LED ON</input><br/>
+  <input type="radio" value="off" name="radio_onoff">Turn LED off</input><br/>  
+  <input type="submit" value="Go!"/>
+  <input type="hidden" name="pin" value="11"/>
+</form>
+
+<h2>The LED is currently:</h2>
+
+<img src="images/current.png" width="100 px" height="100 px"/>
+
+</body>
+</html>
