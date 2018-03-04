@@ -37,6 +37,7 @@ Install everything in the mirrored directories (e.g. stuff in `./etc`
 goes to `/etc`). I assume that you have your LED connected to pin 11
 of your RasPi.  Out of the box, you'll have to allow www-data to
 connect to the GPIO pins:
+
 ```set_gpio_pins -p 11 -u www-data -g www-data```
 
 After executing this command, connecting to the root on your Raspi
