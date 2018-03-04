@@ -18,5 +18,5 @@ if [ "$_IP" ]; then
 fi
 # sudo /usr/local/bin/set_gpio_pins.sh -p 11 -u www-data -g www-data
 # /var/ledDaemon/ledDaemon start
-# /var/cherrypyLedDaemon start
+# /var/cherrypy_led/cherrypyLedDaemon start
 exit 0
