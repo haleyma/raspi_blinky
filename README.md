@@ -89,8 +89,12 @@ vi /var/cherrypy_led/cherrypy_led_daemon.py
 self.the_led=ledBlinker.ledBlinker(11)
 ```
 
+And of course you'll need to change the `-p` argument to `set_gpio_pins.sh`:
 
-
+```
+vi /etc/rc.local
+sudo /usr/local/bin/set_gpio_pins.sh -p 11 -u www-data -g www-data
+```
 
 
 
