@@ -41,18 +41,22 @@ ledPin=int(myForm["pin"].value)
 
 myLED = LedControl(ledPin,False)
 
-
-if myForm["radio_onoff"].value == "ON":
-    shutil.copyfile(on_file,current_file)
-    myLED.on()
+if myForm.has_key("radio_onoff"):
+    if myForm["radio_onoff"].value == "ON":
+        shutil.copyfile(on_file,current_file)
+        myLED.on()
+    else:
+        shutil.copyfile(off_file,current_file)
+        myLED.off()
+    print("<h1>Your Wish is My command</h1>")
+    print('<a href="/index.html">More Commands</a>')
+    print('</html>')
 else:
-    shutil.copyfile(off_file,current_file)
-    myLED.off()
-    
-print("<h1>Your Wish is My command</h1>")
-print('<a href="/index.html">More Commands</a>')
+     print("<h1>What?</h1>")
+     print("<p>Please choose ON or OFF in the previous page.</p>")
+     print('<a href="/index.html">Go Back</a>')
+     print('</html>')
 
-print('</html>')
     
 
 
