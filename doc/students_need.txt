@@ -1,0 +1,11 @@
+Each student needs:
+
+   Laptop Computer ( student )
+   HDMI-capable monitor ( student or Decatur Makers )
+   USB Keyboard ( Decatur Makers) 
+   Raspberry Pi ( Decatur Makers )
+   Power Supply ( Decatur Makers )
+   USB-mini-B <-> USB A power cord (Decatur Makers )
+   LED light  ( Decatur Makers )
+   RJ45 cord ( Decatur Makers )
+   
