@@ -48,7 +48,8 @@ elif ledCtrl == "Blink":
     inStatusFN=os.path.join(status_fdir,"blink"+blinkTime+".png")
 
 
-    
+print("Content-Type: text/html\n\n")
+   
 shmsize = myConfig.getint(configSection,"shmSize")
 try:
    mySHM=IPC.SharedMemory(shmkeynum,flags=0,size=0)
@@ -64,7 +65,7 @@ if SUCCESS is True:
    shutil.copyfile(inStatusFN,current_file)
    
 # cgi.test()
-
+print("<html>")
 print("<h1>Your Wish is My command</h1>")
 print('<a href="/daemon_index.html">More Commands</a>')
 
